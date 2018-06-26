@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Created by wangzhao on 2018/6/26.
+ * java 反射
  */
 public class Hello {
     public static void main(String[] args) {
