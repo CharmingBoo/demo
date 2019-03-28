@@ -1,7 +1,7 @@
 /*
  *
  *  * 文 件 名:  LinkedStack.java
- *  * 版    权:  Copyright 2017 咪咕互动娱乐有限公司,  All rights reserved
+ *  * :  
  *  * 描    述:  <描述>
  *  * 版    本： 1.0.0
  *  * 创 建 人:  wangzhao
