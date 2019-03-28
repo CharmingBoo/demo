@@ -1,5 +1,6 @@
 package com.example.reflect;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -29,6 +30,41 @@ public class Hello {
             method.invoke(demo.newInstance(),"boo",11);
         } catch (Exception e) {
 
+        }
+
+        Class<?> klass = int.class;
+        Class<?> ckassInt = Integer.TYPE;
+
+        StringBuilder str = new StringBuilder("123");
+        Class<?> slass = str.getClass();
+
+        System.out.println(klass.isInstance(ckassInt));
+
+
+        try
+        {
+            //create instance
+            Class<?> c = String.class;
+            //1.Object ss = c.newInstance();
+            Constructor constructor = c.getConstructor(String.class);
+            Object obj = constructor.newInstance("123");
+            System.out.println(obj);
+        }
+        catch (NoSuchMethodException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IllegalAccessException e)
+        {
+            e.printStackTrace();
+        }
+        catch (InstantiationException e)
+        {
+            e.printStackTrace();
+        }
+        catch (InvocationTargetException e)
+        {
+            e.printStackTrace();
         }
     }
 }

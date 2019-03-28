@@ -1,3 +1,14 @@
+/*
+ *
+ *  * 文 件 名:  Solution206.java
+ *  * 版    权:  Copyright 2017 咪咕互动娱乐有限公司,  All rights reserved
+ *  * 描    述:  <描述>
+ *  * 版    本： 1.0.0
+ *  * 创 建 人:  wangzhao
+ *  * 创建时间:  18-10-12 下午1:33
+ *
+ */
+
 package com.example.leetcode;
 
 /**
@@ -23,6 +34,11 @@ package com.example.leetcode;
  */
 public class Solution206
 {
+    /**
+     * 迭代
+     * @param head
+     * @return
+     */
     public static ListNode reverseList(ListNode head)
     {
         ListNode next = null;
@@ -38,6 +54,21 @@ public class Solution206
         return pre;
     }
 
+    /**
+     * 递归
+     * @param head
+     * @return
+     */
+    public static ListNode reverseList2(ListNode head)
+    {
+        if(head == null || head.next == null)
+            return head;
+        ListNode newHead = reverseList2(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+
     public static void main(String[] args)
     {
         ListNode node1 = new ListNode(1);
@@ -51,6 +82,7 @@ public class Solution206
         node3.next = node4;
         node4.next = node5;
 
-        reverseList(node1);
+        //reverseList(node1);
+        reverseList2(node1);
     }
 }
